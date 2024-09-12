@@ -2,6 +2,12 @@ const express = require('express')
 const app = express()
 const router = require('./routers/index')
 
+const conexao = require('./infra/conexao')
+const TabelaTarefas = require('./infra/Tarefas')
+
+TabelaTarefas.init(conexao)
+TabelaTarefas.getTarefas()
+
 router(app)
 
 app.listen(8080, (err) =>{
