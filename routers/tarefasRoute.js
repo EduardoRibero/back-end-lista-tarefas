@@ -1,27 +1,31 @@
 const { Router } = require('express')
 
+const tarefasController = require('../controllers/tarefasControler')
+
 const router = Router()
 
 // get post put delete
 
 router.get('/tarefas', (req, res)=>{
-    res.send("Lista de tarefas get")
+    const resposta = tarefasController.buscar()
+    res.send(resposta)
 })
 
 router.post('/tarefas',  (req, res)=>{
-    res.send("adicionando tarefas")
+    const resposta = tarefasController.criar()
+    res.send(resposta)
 })
 
 router.put('/tarefas/:id',  (req, res)=>{
     const id = req.params
-    id.toString()
-    res.send(`Atualizando tarefa numero :${id.id} `)
+    const resposta = tarefasController.atualizar(id.id)
+    res.send(resposta)
 })
 
 router.delete('/tarefas/:id', (req, res)=>{
     const id = req.params
-    id.toString()
-    res.send(`Deletando tarefa numero :${id.id}`)
+    const resposta = tarefasController.deletar(id.id)
+    res.send(resposta)
 })
 
 module.exports = router
