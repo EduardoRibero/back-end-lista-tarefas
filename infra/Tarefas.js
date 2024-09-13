@@ -1,7 +1,16 @@
 class Tarefas {
     init(conexao){
         this.conexao = conexao
+        console.log(this.conexao)
         this.criarTabelaTarefas()
+        // this.conexao.connect((err) => {
+        //     if (err) {
+        //         console.log(err)
+        //       console.error('Erro ao conectar ao banco de dados:', err.message);
+        //       return;
+        //     }
+        //     console.log('Conexão estabelecida com sucesso!');
+        //   })
     }
 
     criarTabelaTarefas(){
