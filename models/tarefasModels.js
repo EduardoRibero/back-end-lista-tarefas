@@ -39,6 +39,19 @@ class tarefasModels{
             } )
         })
     }
+
+    deletar(id){
+        const sql= `delete from tbtarefas where id = ${id};`
+        return new Promise((resolve, reject) =>{
+            conexao.query(sql, (err, resposta)=>{
+                if(err){
+                    console.log("Erro ao tentar criar nova tarefa")
+                    reject(err)
+                }
+                resolve(resposta)
+            } )
+        })
+    }
 }
 
 module.exports = new tarefasModels()

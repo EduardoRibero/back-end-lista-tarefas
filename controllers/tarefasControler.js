@@ -12,8 +12,8 @@ class TarefasController{
         return tarefasModels.atualizar(tarefa, id)
     }
 
-    deletar(tarefa){
-         return "Deletando tarefa: " + id + ".."
+    deletar(id){
+         return tarefasModels.deletar(id)
     }
 }
 
