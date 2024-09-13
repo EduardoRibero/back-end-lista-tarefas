@@ -17,7 +17,6 @@ class Tarefas {
                 return
             }
 
-            console.log("Tabela criada com sucesso")
         })
     }
 

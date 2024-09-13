@@ -9,9 +9,21 @@ class tarefasModels{
                     console.log("Erro ao listar tarefas em models")
                     reject(err)
                 }
-                console.log("Deu bom então")
                 resolve(resposta)
             })
+        })
+    }
+
+    criar(tarefa){
+        const sql= `insert into tbtarefas (tarefa) value ('${tarefa.tarefa}');`
+        return new Promise((resolve, reject) =>{
+            conexao.query(sql, tarefa, (err, resposta)=>{
+                if(err){
+                    console.log("Erro ao tentar criar nova tarefa")
+                    reject(err)
+                }
+                resolve(resposta)
+            } )
         })
     }
 }

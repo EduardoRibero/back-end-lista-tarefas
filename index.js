@@ -1,18 +1,15 @@
 const express = require('express')
 const app = express()
-const router = require('./routers/index')
 
+//Arquivo de rotas
+const router = require('./routers/index')
+router(app, express)
+
+//Arquivos de acesso a dados
 const conexao = require('./infra/conexao')
 const TabelaTarefas = require('./infra/Tarefas')
 
+//Conexão com Banco de Dados
 TabelaTarefas.init(conexao)
 
-router(app)
-
-app.listen(8080, (err) =>{
-    if(err){
-        console.log("Erro na aplicação")
-        return
-    }
-    console.log("Aplicação Ok!")
-})
+app.listen(8080)

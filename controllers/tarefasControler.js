@@ -4,8 +4,8 @@ class TarefasController{
         return tarefasModels.listar()
     }
 
-    criar(){
-        return "Criando taarefa"
+    criar(novaTarefa){
+        return tarefasModels.criar(novaTarefa)
     }
 
     atualizar(id){

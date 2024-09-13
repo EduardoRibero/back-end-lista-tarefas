@@ -9,12 +9,14 @@ const router = Router()
 router.get('/tarefas', (req, res)=>{
     const resposta = tarefasController.buscar()
     resposta.then((tarefas) => res.status(200).json(tarefas))
-    .catch((err)=> res.status(400).json(err.mesage))
+            .catch((err)=> res.status(400).json(err.mesage))
 })
 
 router.post('/tarefas',  (req, res)=>{
-    const resposta = tarefasController.criar()
-    res.send(resposta)
+    const novaTarefa = req.body
+    const resposta = tarefasController.criar(novaTarefa)
+    resposta.then((tarefa) => res.status(201).json(tarefa))
+            .catch((err) => res.status(400).json(err.mesage))
 })
 
 router.put('/tarefas/:id',  (req, res)=>{
