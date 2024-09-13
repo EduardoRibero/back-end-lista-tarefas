@@ -21,17 +21,6 @@ class Tarefas {
         })
     }
 
-    getTarefas(){
-        const sql = `select * from tbtarefas;`
-
-        this.conexao.query(sql, (err)=>{
-            if(err){
-                console.log("Erro ao obter dados")
-                return
-            }
-            console.log("Onde eu pego os dados???")
-        })
-    }
 }
 
 

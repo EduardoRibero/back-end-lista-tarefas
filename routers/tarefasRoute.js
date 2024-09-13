@@ -8,7 +8,8 @@ const router = Router()
 
 router.get('/tarefas', (req, res)=>{
     const resposta = tarefasController.buscar()
-    res.send(resposta)
+    resposta.then((tarefas) => res.status(200).json(tarefas))
+    .catch((err)=> res.status(400).json(err.mesage))
 })
 
 router.post('/tarefas',  (req, res)=>{

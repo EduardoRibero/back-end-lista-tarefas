@@ -6,7 +6,6 @@ const conexao = require('./infra/conexao')
 const TabelaTarefas = require('./infra/Tarefas')
 
 TabelaTarefas.init(conexao)
-TabelaTarefas.getTarefas()
 
 router(app)
 
