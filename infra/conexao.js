@@ -1,10 +1,10 @@
 const mysql = require('mysql2')
 
 const conexao = mysql.createConnection({
-    host: '192.168.0.166',
+    host: 'http://ip-72-14-185-104.cloudezapp.io/',
     port: 3306,
-    user: "root",
-    password: "admin",
+    user: "db_tarefas",
+    password: "o5<#$l+P",
     database: "db_tarefas"
 })
 
